@@ -1,0 +1,1 @@
+"""Food Travel MCP Server."""
