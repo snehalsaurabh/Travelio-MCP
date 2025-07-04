@@ -10,16 +10,17 @@ A **Model Context Protocol (MCP) server** that provides restaurant search and fo
 - **MCP Client** (Claude Desktop, custom AI agents): Calls our tools based on user prompts
 
 ### How it Works
-
+```
 User: "Find Italian restaurants near me"
-↓
+    ↓
 AI Client (Claude/Custom Agent)
-↓ (analyzes prompt, decides to call search_restaurants tool)
+    ↓ (analyzes prompt, decides to call search_restaurants tool)
 Our MCP Server
-↓ (calls Google Places API)
+    ↓ (calls Google Places API)
 Real Restaurant Data
-↓ (returns structured JSON to AI client)
+    ↓ (returns structured JSON to AI client)
 AI Client formats response for user
+```
 
 ## 🚀 Features
 
@@ -84,8 +85,10 @@ python scripts/init_db.py
 ```
 
 You should see:
+```
 Creating database tables...
 Database tables created successfully!
+```
 
 
 ## 🧪 Testing
@@ -130,10 +133,12 @@ python -m src.food_mcp.server
 ```
 
 **Expected output:**
+```
 INFO Food Travel MCP Server initialized
 INFO Restaurant tools registered
 INFO Starting Food Travel MCP Server
 [Server running and waiting for MCP client connections...]
+```
 
 
 ### Server Endpoints
@@ -173,47 +178,48 @@ Search for restaurants based on location and preferences.
 
 ## 📁 Project Structure
 
-
+```
 Food-Travel-MCP/
-├── 📄 README.md # This file
-├── 📄 requirements.txt # Python dependencies
-├── 📄 .env.example # Environment template
-├── 📄 .gitignore # Git ignore rules
+├── 📄 README.md                 # This file
+├── 📄 requirements.txt          # Python dependencies
+├── 📄 .env.example             # Environment template
+├── 📄 .gitignore               # Git ignore rules
 │
-├── 📁 config/ # Configuration
-│ ├── init.py
-│ └── settings.py # Application settings
+├── 📁 config/                  # Configuration
+│   ├── __init__.py
+│   └── settings.py             # Application settings
 │
-├── 📁 src/food_mcp/ # Main MCP server package
-│ ├── init.py
-│ ├── server.py # MCP server entry point
-│ │
-│ ├── 📁 models/ # Database models
-│ │ ├── init.py
-│ │ ├── base.py # Database base & session
-│ │ └── restaurant.py # Restaurant cache model
-│ │
-│ ├── 📁 clients/ # External API clients
-│ │ ├── init.py
-│ │ └── google_places.py # Google Places API client
-│ │
-│ ├── 📁 services/ # Business logic layer
-│ │ ├── init.py
-│ │ └── restaurant_service.py
-│ │
-│ └── 📁 tools/ # MCP tool definitions
-│ ├── init.py
-│ └── restaurant_tools.py # Restaurant search tools
+├── 📁 src/food_mcp/           # Main MCP server package
+│   ├── __init__.py
+│   ├── server.py              # MCP server entry point
+│   │
+│   ├── 📁 models/             # Database models
+│   │   ├── __init__.py
+│   │   ├── base.py            # Database base & session
+│   │   └── restaurant.py      # Restaurant cache model
+│   │
+│   ├── 📁 clients/            # External API clients
+│   │   ├── __init__.py
+│   │   └── google_places.py   # Google Places API client
+│   │
+│   ├── 📁 services/           # Business logic layer
+│   │   ├── __init__.py
+│   │   └── restaurant_service.py
+│   │
+│   └── 📁 tools/              # MCP tool definitions
+│       ├── __init__.py
+│       └── restaurant_tools.py # Restaurant search tools
 │
-├── 📁 tests/ # Test suite
-│ ├── init.py
-│ ├── conftest.py # Pytest configuration
-│ ├── test_components.py # Component tests
-│ ├── test_mcp_tools.py # MCP tools tests
-│ └── run_all_tests.py # Test runner
+├── 📁 tests/                  # Test suite
+│   ├── __init__.py
+│   ├── conftest.py            # Pytest configuration
+│   ├── test_components.py     # Component tests
+│   ├── test_mcp_tools.py      # MCP tools tests
+│   └── run_all_tests.py       # Test runner
 │
-└── 📁 scripts/ # Utility scripts
-└── init_db.py # Database initialization
+└── 📁 scripts/                # Utility scripts
+    └── init_db.py             # Database initialization
+```
 
 
 ## 🔧 Development Workflow
